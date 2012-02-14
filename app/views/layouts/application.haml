@@ -1,0 +1,18 @@
+!!! Strict
+%html
+  %head
+    %title= [@title, "Padrino Sample Blog"].compact.join(" | ")
+    = stylesheet_link_tag 'application'
+    = yield_content :include
+  %body
+    #header
+      %h1 Mystery Machine Blog
+    #container
+      #main= yield
+      #sidebar
+        %ul.menu
+          %li= link_to 'Blog', url_for(:posts, :index)
+          %li= link_to 'About', url_for(:about)
+	
+    #footer
+      Copyright (c) 2012 Open Everything
